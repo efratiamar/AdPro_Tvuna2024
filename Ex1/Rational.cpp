@@ -7,6 +7,7 @@ void Rational::print()
 {
 	cout << mone << "/" << mechane << endl;
 	cout << "vdvdds" << endl;
+
 };
 
 float Rational::reduce(float r)
