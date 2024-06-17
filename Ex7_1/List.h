@@ -2,6 +2,7 @@
 
 class List
 {
+protected:
 	class Link
 	{
 	//private:
@@ -13,6 +14,7 @@ class List
 		Link* next;
 		Link(int _k, Link* _n = nullptr);
 	};
+
 
 	Link* head;
 

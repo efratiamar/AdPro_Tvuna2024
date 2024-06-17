@@ -2,6 +2,7 @@
 
 class List
 {
+protected:
 	class Link
 	{
 	//private:
