@@ -47,7 +47,7 @@ int main()
 	pB->cageSize;
 	pB->highetTopCage =9;
 
-	//pB = new Animal(5);
+	//pB = new Animal(5); //compilation error!!
 
 	pB->highetTopCage = 8;
 
