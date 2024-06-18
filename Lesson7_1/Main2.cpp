@@ -41,14 +41,11 @@ int main()
 	pA->carnivorous = 9;
 	((Bird *) pA)->highetTopCage = 7;
 	if (pA)
-		delete pA;
+		delete pA; //only the Animal part will be deleted!! we will fix it next lesson
 
 	Bird* pB = new Bird(7);
 	pB->cageSize;
 	pB->highetTopCage =9;
-
-	if (pA)
-		delete pA;
 
 	//pB = new Animal(5);
 
