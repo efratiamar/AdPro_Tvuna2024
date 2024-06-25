@@ -25,5 +25,4 @@ public:
 	void clear();
 	int at(int i) const;
 	void print() const;
-	void sort();
 };

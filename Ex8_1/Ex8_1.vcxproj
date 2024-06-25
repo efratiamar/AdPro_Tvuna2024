@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c8e93841-7558-45d6-ba6a-34d1e1aa6b48}</ProjectGuid>
-    <RootNamespace>Ex3</RootNamespace>
+    <ProjectGuid>{2c40369c-3950-4fab-b5ee-74e1b12faab8}</ProjectGuid>
+    <RootNamespace>Ex81</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,10 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="List.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="StackList.cpp" />
+    <ClCompile Include="StackVector.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="List.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="StackList.h" />
+    <ClInclude Include="StackVector.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

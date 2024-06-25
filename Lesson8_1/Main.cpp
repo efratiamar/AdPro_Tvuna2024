@@ -7,12 +7,20 @@ public:
 	virtual void print1() { cout << "A–print1"; }
 	virtual void print2() { cout << "A–print2"; }
 	virtual void print3() { cout << "A–print3"; }
+	virtual void print4() { cout << "A-print4"; }
+
+
+	virtual void testA(float x) { cout << "testA base" << endl; };
+	virtual void testB(float x) = 0;
+	virtual void testC() const { cout << "testC base" << endl; };
+	void testD() { cout << "testD base" << endl; };
 };
 
 class B : public A
 {
 public:
 	void print1() { cout << "B–print1"; }
+
 	virtual void print2() { cout << "B–print2"; }
 	void bFunction() { cout << "B–func1"; }
 	void print3()
@@ -20,6 +28,17 @@ public:
 		A::print3(); //A-print3
 		cout << "B-print3";
 	}
+	void print4() final { cout << "B-print4"; }
+
+	void testA(float x) override { cout << "testA derived1" << endl; };
+	void testB(float x) override { cout << "testB derived1" << endl; };
+	void testC() const override { cout << "testC derived1" << endl; };
+	void testD() { cout << "testD derived1" << endl; };
+
+	//int testA(int x) override { cout << "testA derived2" << endl; };
+	//void testB(int x) override { cout << "testB derived2" << endl; };
+	//void testC() override { cout << "testC derived2" << endl; };
+	//void testD() override { cout << "testD derived2" << endl; };
 
 };
 
@@ -28,6 +47,9 @@ class C : public B
 public:
 	void print1() { cout << "C–print1"; }
 	void print2() { cout << "C–print2"; }
+	//void print4() { cout << "B-print4"; } //comp error!!!!!
+	void print4(int x) { cout << "B-print4"; } //ok!!!!!
+
 };
 
 void Test1()
@@ -49,6 +71,7 @@ void func1(A a2) //copy ctor
 {
 	a2.print1();
 }
+
 void func2(A& a2) //copy ctor does not called!!
 {
 	a2.print1();
@@ -103,6 +126,17 @@ void Test4()
 	b.print3(); // A-print3 B-print*
 	b.A::print3(); // A-print3
 }
+
+void Test5()
+{
+	A* pA = new B;
+	pA->testA(5.8);//testA derived1
+	pA->testB(4.7);//testB derived1
+	pA->testC();//testC derived1
+	pA->testD();//testD base
+
+}
+
 
 int main()
 {

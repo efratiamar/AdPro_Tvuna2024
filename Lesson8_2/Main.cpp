@@ -1,85 +1,136 @@
-#include "Square.h"
-#include "Triangle.h"
-#include "Circle.h"
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+using namespace std;
 
-Shape::Shape(string n) :name(n)
-{}
-
-void Shape::print()
+class A
 {
-	cout << name << ":\t";
-	details();
-	cout << "area:\t" << area() << endl;
+private:
+	char* str1;
+public:
+
+	A(const char* str)
+	{
+		cout << "A constructor\n";
+		str1 = new char[strlen(str) + 1];
+		strcpy(str1, str);
+	}
+
+	~A()
+	{
+		cout << "A destructor\n";
+		if (str1)
+			delete str1;;
+	}
+};
+
+class B :public A
+{
+private:
+	char* str2;
+public:
+
+	B(const char* str) : A(str)
+	{
+		cout << "B constructor\n";
+		str2 = new char[strlen(str) + 1];
+		strcpy(str2, str);
+	}
+
+	~B()
+	{
+		cout << "B destructor\n";
+		if (str2)
+			delete str2;
+	}
+};
+
+void Test6_1()
+{
+	A aa("test A");
+	B bb("test B");
+	return;
+
+/*
+A constructor
+A constructor
+B constructor
+B destructor
+A destructor
+A destructor
+*/
 }
 
-Square::Square(int s) : Shape("Square"), side(s)
-{}
-
-float Square::area()
+int Test6_2()
 {
-	return side * side;
-}
-
-void Square::details()
-{
-	cout << side << "\t";
-}
-
-
-Circle::Circle(int r, int x, int y)
-	:Shape("Circle")
-{
-	radius = r;
-	center_x = x;
-	center_y = y;
-}
-
-float Circle::area()
-{
-	return 3.14 * radius * radius;
-}
-
-void Circle::details()
-{
-	cout << radius << "\t(" << center_x << ',' << center_y << ")\t";
+	A* pA = new B("test ab");
+	delete pA;
+	return 0;
+/*
+A constructor
+B constructor
+A destructor
+*/
 }
 
 
-Triangle::Triangle(int x, int y, int z) :Shape("Triangle")
+class A1
 {
-	a = x;	b = y;	c = z;
-}
+private:
+	char* str1;
+public:
 
-float Triangle::area()
-{
-	int s = (a + b + c) / 2.0;
-	return sqrt(s * (s - a) * (s - b) * (s - c));
-}
+	A1(const char* str)
+	{
+		cout << "A1 constructor\n";
+		str1 = new char[strlen(str) + 1];
+		strcpy(str1, str);
+	}
 
-void Triangle::details()
+	virtual ~A1()
+	{
+		cout << "A1 destructor\n";
+		if (str1)
+			delete str1;;
+	}
+};
+
+class B1 :public A1
 {
-	cout << a << '\t' << b << '\t' << c << '\t';
+private:
+	char* str2;
+public:
+
+	B1(const char* str) :A1(str)
+	{
+		cout << "B1 constructor\n";
+		str2 = new char[strlen(str) + 1];
+		strcpy(str2, str);
+	}
+
+	~B1()
+	{
+		cout << "B1 destructor\n";
+		if (str2)
+			delete str2;
+	}
+};
+
+
+int Test6_3()
+{
+	A1* pA1 = new B1("test ab virtual");
+	delete pA1;
+	return 0;
+
+/*
+A constructor
+B constructor
+B destructor
+A destructor
+*/
 }
 
 int main()
 {
-	//Shape s;   //compilation error
-	Shape* ps; //ok
-	//ps = new Shape; //compilation error
-
-	Shape* vec[10];
-	for (int i = 0; i < 10; i++)
-	{
-		int x = rand() % 3;
-		switch (x)
-		{
-		case 0:vec[i] = new Square(rand() % 10 + 1);				break;
-		case 1:vec[i] = new Triangle(rand() % 10 + 1, rand() % 10 + 1, rand() % 10 + 1);
-			break;
-		case 2:vec[i] = new Circle(rand() % 10 + 1, rand() % 10 + 1, rand() % 10 + 1); break;
-		}
-	}
-
-	for (int i = 0; i < 10; i++)
-		vec[i]->print();
+	Test6_2();
 }

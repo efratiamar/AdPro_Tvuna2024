@@ -37,6 +37,7 @@ int main()
     Employee emp2("Rivka", "Levi", 3000);
 
     per2 = emp2; //up casting is ok! but - only the Person part of emp2 is assigned!
+    //emp2 = per2; //comp error
     per2.print(); //print only the Person part of emp2
     //emp2 = per2; //comp error
 

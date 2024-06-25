@@ -1,5 +1,48 @@
-//#include <iostream>
-//using namespace std;
+#include <iostream>
+using namespace std;
+
+class Animal
+{
+public:
+    float cageSize;
+    int itemNum;
+    bool carnivorous;
+
+    int* feeding[7];
+
+    Animal(int x)
+    {};
+};
+class Bird : public Animal
+{
+public:
+    float highetTopCage;
+
+    Bird(float h) : Animal(5), highetTopCage(h)
+    {};
+};
+                        
+int main()
+{
+    Animal a(7);
+    Bird b(4);
+
+    Animal* pA1 = new Animal(4);
+    pA1->cageSize = 7;
+
+    Animal* pA = new Bird(4);
+    pA->cageSize = 9;
+    pA->highetTopCage = 8;
+
+    ((Bird*)pA)->highetTopCage = 98;
+
+    Bird* pB = new Animal(5);
+    pB->cageSize = 9;
+    pB->highetTopCage = 99;
+
+
+}
+
 //
 ////class Animal
 ////{
