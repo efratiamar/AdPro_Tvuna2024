@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	GList list1; //compilation error!!!
+	//GList list1; //compilation error!!!
 
 	GList<int> list1;
 	GList<float> list2;
