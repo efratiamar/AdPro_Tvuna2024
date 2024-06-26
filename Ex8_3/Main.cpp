@@ -1,8 +1,18 @@
-//standard exceptions
+﻿//standard exceptions
 #include <iostream>
 using namespace std;
 
-class myException : public exception
+class myException1 : public exception
+{
+    virtual const char* what() const throw()
+    {
+        return "My exception happened";
+    }
+} myex;
+
+
+
+class myException2 : public exception
 {
     virtual const char* what() const throw()
     {
@@ -15,8 +25,9 @@ int main()
     try
     {
         int y = 0;
-        //throw myex;
-        int x = 4 / y;
+        //throw myex1;
+        //throw me ex2;
+        int x = 4 / y;  //האם יגיע לכאן?
     }
     catch (exception& e)
     {
