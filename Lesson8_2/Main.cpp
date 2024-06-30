@@ -19,11 +19,11 @@ public:
 	{
 		cout << "A destructor\n";
 		if (str1)
-			delete str1;;
+			delete str1;
 	}
 };
 
-class B :public A
+class B : public A
 {
 private:
 	char* str2;

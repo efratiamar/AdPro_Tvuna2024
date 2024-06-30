@@ -2,7 +2,7 @@
 
 //== class QueueList implementation ==
 
-QueueList::QueueList() :data()
+QueueList::QueueList() : data()
 {
     // no further initialization
 }

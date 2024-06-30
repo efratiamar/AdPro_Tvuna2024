@@ -11,7 +11,7 @@ class QueueVector : public Queue
 public:
 	// constructor requires a size
 	QueueVector(int max);
-	QueueVector(const QueueVector&);
+	//QueueVector(const QueueVector&);
 
 	// implement Queue protocol
 	void clear() override;

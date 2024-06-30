@@ -10,7 +10,7 @@ class StackList : public Stack
 {
 public:
     StackList();
-    StackList(const StackList&);
+    //StackList(const StackList&);
 
 
     // Stack operations

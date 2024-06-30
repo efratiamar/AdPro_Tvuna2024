@@ -51,7 +51,7 @@ void List::add(int value)
 void List::removeFirst()
 {
 	if (isEmpty())
-		throw "underflow - cannot remove empty list\n";
+		throw "underflow - cannot remove from empty list\n";
 
 	Link* ptr = head;
 	head = head->next;

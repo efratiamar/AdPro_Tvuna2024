@@ -91,6 +91,12 @@ int main()
 	for (int i = 0; i < 10; i++)
 	{
 		vec[i]->print();
-		vec
 	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (vec[i])
+			delete vec[i];
+	}
+
 }

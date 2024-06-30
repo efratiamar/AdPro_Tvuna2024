@@ -45,8 +45,8 @@ void RoundVector::addNext(int val)
 	int nextPlace = (tail + 1) % (capacity + 1);
 	
 	if (nextPlace == head)
-		//throw "Vector is full";
-		cout << "Vector is full" << endl;
+		throw "Vector is full";
+		//cout << "Vector is full" << endl;
 	else
 	{
 		vec[tail] = val;
@@ -57,8 +57,8 @@ void RoundVector::addNext(int val)
 int RoundVector::removeFirst()
 {
 	//for future use
-	//if (isEmpty())
-	//	throw "Vector is empty";
+	if (isEmpty())
+		throw "Vector is empty";
 
 	int firstVal = vec[head];
 	head = (head + 1) % (capacity + 1);
@@ -68,8 +68,8 @@ int RoundVector::removeFirst()
 int RoundVector::firstValue()
 {
 	//for future use
-	//if (isEmpty())
-	//	throw "Vector is empty";
+	if (isEmpty())
+		throw "Vector is empty";
 
 	return vec[head];
 }

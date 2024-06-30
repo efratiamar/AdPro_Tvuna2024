@@ -49,7 +49,6 @@ public:
 	void print2() { cout << "C–print2"; }
 	//void print4() { cout << "B-print4"; } //comp error!!!!!
 	void print4(int x) { cout << "B-print4"; } //ok!!!!!
-
 };
 
 void Test1()

@@ -11,4 +11,5 @@ public:
 	virtual float area() = 0;
 	virtual void details() = 0;
 	void print();
+	virtual ~Shape() {};
 };

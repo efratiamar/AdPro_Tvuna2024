@@ -4,7 +4,7 @@
 //-------------------------------------
 
 StackVector::StackVector(int capacity)
-    : data(capacity)
+    : data(capacity), Stack()
 {}
 
 void StackVector::clear()
