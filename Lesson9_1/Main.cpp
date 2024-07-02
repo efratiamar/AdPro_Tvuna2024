@@ -44,29 +44,37 @@ void Test1()
 	Print<float>(2.5);
 
 	MyClass mc;
-	Print<MyClass>(mc);
+	//Print<MyClass>(mc);
 }
 
-
-//////////////////////////
-
 template <class T>
-T getMax(T x, T y)  //return type T
+T getMax(T x, T y)
 {
 	if (x > y)
 		return x;
 	return y;
 }
 
-class MyClass
-{
-	//...
-	//operator > must be defined for MyClass
-};
+
+
+
+
+//////////////////////////
+
+//template <class T>
+//T getMax(T x, T y)  //return type T
+//{
+//	if (x > y)
+//		return x;
+//	return y;
+//}
+//
+
 
 void Test2()
 {
 	cout << getMax<int>(3, 4) << endl;
+
 	float a = 5.25, b = 3.5;
 	cout << getMax<float>(a, b) << endl;
 	cout << getMax<char>('a', 'z') << endl;
@@ -106,6 +114,11 @@ void print(T vec[], int size)
 
 void Test3()
 {
+	int x = 7;
+	int y = 8;
+	Swap<int>(x, y);
+	Swap(x, y);
+
 	int integers[10];
 	srand((unsigned)time(nullptr));
 	for (int i = 0; i < 10; i++)
@@ -118,4 +131,10 @@ void Test3()
 		characters[i] = (rand() % 26) + 65;
 	bubbleSort<char>(characters, 5);
 	print<char>(characters, 5);
+}
+
+
+int main()
+{
+	Test1();
 }

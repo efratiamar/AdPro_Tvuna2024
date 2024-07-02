@@ -4,6 +4,7 @@ class Father
     T* data;
 };
 
+
 class Girl : public Father<int>
 {
     //…
@@ -28,11 +29,17 @@ int main()
     
     //ok:
     Father<int>* f1 = new Father<int>;
+
     Girl g1;
+
     Son<int> s1;
+
     f1 = &s1;
+
     f1 = new Girl();
+
     f1 = &g1;
+
     Son<char> s2;
 
     //f1 = &s2; //comp error

@@ -15,8 +15,10 @@ public:
 	~Vector();
 	//operations
 	Vector<T>& operator = (const Vector<T>&);
+
 	// view  and modify
 	T& operator [](int index);
+
 	int	getSize() const;
 	int  getCapacity() const;
 	void insert(T value);

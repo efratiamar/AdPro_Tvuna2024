@@ -24,12 +24,10 @@ int QueueList::dequeue()
     return result;
 }
 
-
 void QueueList::enqueue(int value)
 {
     data.addToEnd(value);
 }
-
 
 int QueueList::front()
 {
