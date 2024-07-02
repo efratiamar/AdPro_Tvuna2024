@@ -66,7 +66,7 @@ int main()
 
 
 	//insert
-	v1.insert()
+	//v1.insert(...)
 
 
 	list<float> ls1;
