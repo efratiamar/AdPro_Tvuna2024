@@ -23,7 +23,7 @@ void DoSomething()
 {
 	T t1;
 	cin >> t1;
-	T t2;
+	K t2;
 	cin >> t2;
 	T t3 = t1 + t2;
 	cout << t3;
@@ -37,23 +37,34 @@ void Test1()
 
 	Print(sum); //<==> Print<int>(sum);
 
-	DoSomething<int>();
+	DoSomething<int>();//DoSomething(); //XXX
 
 	Print<int>(sum);
 	Print<char>(initial);
 	Print<float>(2.5);
+	Print<float>(2.3);
 
 	MyClass mc;
-	//Print<MyClass>(mc);
+	Print<MyClass>(mc);
 }
-
 template <class T>
 T getMax(T x, T y)
 {
 	if (x > y)
 		return x;
-	return y;
+	else
+		return y;
 }
+
+
+//
+//template <class T>
+//T getMax(T x, T y)
+//{
+//	if (x > y)
+//		return x;
+//	return y;
+//}
 
 
 
@@ -79,8 +90,9 @@ void Test2()
 	cout << getMax<float>(a, b) << endl;
 	cout << getMax<char>('a', 'z') << endl;
 	MyClass mc1, mc2;
-	cout << getMax<MyClass>(mc1, mc2) << endl;	//compilation error:
+	//cout << getMax<MyClass>(mc1, mc2) << endl;	//compilation error:
 												//operator > must be defined for MyClass
+	getMax<MyClass>(mc1, mc2);
 }
 
 

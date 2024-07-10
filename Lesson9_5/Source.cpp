@@ -9,12 +9,22 @@ int main()
 {
 	vector<int> v1;
 
-	vector<int> vec;		//default ctor, create dynamic vector for integers, with unknown size
+	vector<int> vec;//default ctor, create dynamic vector for integers, with unknown size
+	cout << vec.capacity();
+
+
 	vector<char> cv1(5);	//ctor that gets size, 
 	//create vector with ‘size’ chars with default value of 0. //0 0 0 0 0 
+	
+	
+	
 	vector<char> cv2(5, 'x');	//ctor that gets size, and def val. 
 	//create vector with 5 chars with default value of ‘x’. //’x’ ‘x’ ‘x’ ‘x’ ‘x’
+	
 	vector<int> vect(vec);	//copy ctor
+
+	v1.push_back(1); //1
+	v1.pop_back(); //
 
 	v1.push_back(1);
 	v1.push_back(2);
@@ -22,6 +32,7 @@ int main()
 	v1.push_back(4); //1 2 3 4 
 	v1.pop_back(); // 1 2 3
 	v1[1] = 7; //1 7 3
+	v1.at(1) = 7;
 
 	cout << v1.back(); //3
 	cout << v1.capacity();
@@ -30,56 +41,60 @@ int main()
 	if (v1.empty())
 	{ //...;
 	}
-	//v1.swap(vec);
-	//v1.clear();
+	v1.swap(vec);
+	v1.clear();
 
-	for (int i; i < v1.size(); i++)
+	for (int i=0; i < v1.size(); i++)
 	{
 		cout << v1[i];
 		cout << v1.at(i);
 	}
 
-	vector<int>::iterator it1; //vector<int>* it1;
+	list<char> ls1;
+	ls1.push_back('A');
+	ls1.push_front('B'); //B A
 
-	//cout << v1.begin();
-	it1 = v1.begin();
-	cout << *it1; //1
+	list<char> ls2;
+	//...
+	
+	list<char>::iterator it1;
 
+	it1 = ls1.begin();
+
+	cout << *it1; //B
+	*it1 = 'C'; //C A
 	++it1;
-	cout << *it1; //7
+	cout << *it1; //A
+	--it1;
+	cout << *(it1);
 
-	it1 = v1.end(); //after the last val
-	cout << --(*it1); //last val , 3
+	it1 = ls1.end(); // A B C
 
-	vector<int>::iterator it2;
+	it1 = ls2.begin();
 
-	for (it2 = v1.begin(); it2 != v1.end(); it2++)
+	for (list<char>::iterator it3 = ls1.begin(); it3 != ls1.end(); it3++)
 	{
-		cout << *it2;
+		cout << *it3 << endl;
 	}
 
-	vector<char> cv1(5, 'x');
-	for (vector<char>::iterator it3 = cv1.begin(); it3 != cv1.end(); it3++)
+	for (vector<int>::iterator it3 = v1.begin();
+		it3 != v1.end(); it3++)
 	{
-
+		cout << *it3 << endl;
 	}
 
 
-	//insert
-	//v1.insert(...)
+	list<float> ls3;
+	ls3.push_back(2);//2
+	ls3.push_front(1);// 1 2
+	ls3.push_back(3);// 1 2 3
+	ls3.push_back(4);// 1 2 3 4
+
+	ls3.pop_back(); // 1 2 3
+	ls3.pop_front(); // 2 3
 
 
-	list<float> ls1;
-	ls1.push_back(2);//2
-	ls1.push_front(1);// 1 2
-	ls1.push_back(3);// 1 2 3
-	ls1.push_back(4);// 1 2 3 4
-
-	ls1.pop_back(); // 1 2 3
-	ls1.pop_front(); // 2 3
-
-
-	for (list<float>::iterator it3 = ls1.begin(); it3 != ls1.end(); it3++)
+	for (list<float>::iterator it3 = ls3.begin(); it3 != ls3.end(); it3++)
 	{
 		cout << *it3;
 	}
@@ -89,6 +104,7 @@ int main()
 	s1.push(8);
 	s1.pop();
 	s1.top();
+
 
 	queue<int> q1;
 	q1.push(5);
