@@ -35,16 +35,16 @@ public:
     virtual bool search(T val) = 0;
     virtual void remove(T val) = 0;
 
-    bool isHeap()
-    {
-        if (isHeapMax(root))
-            return true;
-        else if (isHeapMin(root))
-            return true;
-        else
-            return false;
+    //bool isHeap()
+    //{
+    //    if (isHeapMax(root))
+    //        return true;
+    //    else if (isHeapMin(root))
+    //        return true;
+    //    else
+    //        return false;
 
-    }
+    //}
 
 
 private:

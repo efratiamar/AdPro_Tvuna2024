@@ -17,8 +17,8 @@ private:
 template <class T>
 void SearchTree<T>::add(T value)
 {
-	if (this->root == nullptr)
-		this->root = new class Tree<T>::Node(value);
+	if (this->isEmpty())
+		Tree<T>::root = new class Tree<T>::Node(value);
 	else
 		add(this->root, value);
 }
