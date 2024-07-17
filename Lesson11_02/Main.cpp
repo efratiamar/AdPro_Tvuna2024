@@ -1,6 +1,34 @@
 #include <iostream>
 using namespace std;
 
+//A   BCDE
+// EDCB A
+//EDCBA
+
+void rev(const char* str)
+{
+	if (*str != '\0')
+	{
+		rev(str + 1);
+		cout << *str; //str[0]
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //a bcd
 //dcb a
 void reverse1(const char* word)
@@ -57,5 +85,6 @@ int sum1(int n)
 
 int main()
 {
-	reverse1("abcd");
+	rev("ABCDE"); 
+	//reverse1("abcd");
 }
