@@ -39,8 +39,6 @@ int main()
     per2 = emp2; //up casting is ok! but - only the Person part of emp2 is assigned!
     //emp2 = per2; //comp error
     per2.print(); //print only the Person part of emp2
-    //emp2 = per2; //comp error
-
 
     Person* p2;
     p2 = &per2; //no need for casting at all - ok!
@@ -59,10 +57,9 @@ int main()
     Employee emp3("Rivka", "Levi", 3000);
     
     Employee* pE3;
-    //pE3 = emp3; //compilation error - down casting is not allowed!
     //pE3 = &per3; //compilation error - down casting is not allowed!
 
     pE3 = (Employee*)&per3; //down casting is allowed only with explicit cast!
+                            //but can cause a run time error
     pE3->print(); //run time error - will try to print the whole employee which no exist
 }
-
